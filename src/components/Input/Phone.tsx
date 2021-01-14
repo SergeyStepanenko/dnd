@@ -1,30 +1,21 @@
 import React from 'react';
 import { palette } from '@/constants';
 import IconReset from '../Icons/Reset';
-import * as S from './String.styled';
+import PhoneInput from 'react-phone-input-2';
+import * as S from './Phone.styled';
 
-interface IInputStringProps {
+interface IInputPhoneProps {
   label: string;
   name: string;
   value: string;
-  placeholder: string;
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange: (phone: string) => void;
   onReset: (name: string) => void;
   onBlur: (event: React.FocusEvent<HTMLInputElement>) => void;
   error?: string;
 }
 
-const InputString: React.FC<IInputStringProps> = (props) => {
-  const {
-    label,
-    name,
-    value,
-    placeholder,
-    onChange,
-    onReset,
-    onBlur,
-    error,
-  } = props;
+const InputPhone: React.FC<IInputPhoneProps> = (props) => {
+  const { label, name, value, onChange, onReset, onBlur, error } = props;
 
   const handleReset = () => {
     onReset(name);
@@ -33,17 +24,11 @@ const InputString: React.FC<IInputStringProps> = (props) => {
   return (
     <S.Label>
       <p>{label}</p>
-      <S.InputWrapper>
-        <S.Input
-          type="text"
-          name={name}
+      <S.InputWrapper isError={!!error}>
+        <PhoneInput
           value={value}
-          placeholder={placeholder}
-          maxLength={50}
           onChange={onChange}
-          onBlur={onBlur}
-          isError={!!error}
-          autoComplete="on"
+          placeholder="+1 (123) 456-78-90"
         />
         {value || error ? (
           <S.Reset onClick={handleReset}>
@@ -56,4 +41,4 @@ const InputString: React.FC<IInputStringProps> = (props) => {
   );
 };
 
-export default InputString;
+export default InputPhone;

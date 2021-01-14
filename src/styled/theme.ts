@@ -1,10 +1,5 @@
-const breakpoints = ['991px'];
+import { palette } from '@/constants';
 
 export default {
-  breakpoints,
-  colors: {
-    white: '#ffffff',
-    black: '#2c2c2c',
-    grey: '#454f63',
-  },
+  colors: palette,
 };

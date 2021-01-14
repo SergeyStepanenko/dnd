@@ -1,22 +1,7 @@
 import React from 'react';
 import Input from '../Input';
+import { FORM_VALUES_INITIAL, EFields } from './Form.constants';
 import * as S from './Form.styled';
-
-enum EFields {
-  FullName = 'fullName',
-  Subject = 'subject',
-  Phone = 'phone',
-  Email = 'email',
-  Message = 'message',
-}
-
-const FORM_VALUES_INITIAL = {
-  [EFields.FullName]: '',
-  [EFields.Subject]: '',
-  [EFields.Phone]: '',
-  [EFields.Email]: '',
-  [EFields.Message]: '',
-} as const;
 
 const Form: React.FC = () => {
   const [formValues, setFormValues] = React.useState<
@@ -30,8 +15,30 @@ const Form: React.FC = () => {
     }));
   };
 
+  const handlePhoneChange = (phone: string) => {
+    setFormValues((prevState) => ({
+      ...prevState,
+      [EFields.Phone]: phone,
+    }));
+  };
+
+  const handleReset = (name: string) => {
+    setFormValues((prevState) => ({
+      ...prevState,
+      [name]: '',
+    }));
+  };
+
+  const handleBlur = (event: React.FocusEvent<HTMLInputElement>) => {
+    console.log('event', event.target.name, event.target.value);
+  };
+
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
+  };
+
   return (
-    <S.Wrapper>
+    <S.Form>
       <S.Inner>
         <Input.String
           label="Full Name"
@@ -39,9 +46,45 @@ const Form: React.FC = () => {
           value={formValues[EFields.FullName]}
           placeholder="Your Full Name"
           onChange={handleChange}
+          onReset={handleReset}
+          onBlur={handleBlur}
+        />
+        <Input.String
+          label="Subject"
+          name={EFields.Subject}
+          value={formValues[EFields.Subject]}
+          placeholder="Your Subject"
+          onChange={handleChange}
+          onReset={handleReset}
+          onBlur={handleBlur}
         />
       </S.Inner>
-    </S.Wrapper>
+      <S.Inner>
+        <Input.Phone
+          label="Phone"
+          name={EFields.Phone}
+          value={formValues[EFields.Phone]}
+          onChange={handlePhoneChange}
+          onReset={handleReset}
+          onBlur={handleBlur}
+        />
+        <Input.String
+          label="Email"
+          name={EFields.Email}
+          value={formValues[EFields.Email]}
+          placeholder="email@gmail.com"
+          onChange={handleChange}
+          onReset={handleReset}
+          onBlur={handleBlur}
+        />
+      </S.Inner>
+      <S.Submit
+        type="submit"
+        as="input"
+        value="Start a Project"
+        onClick={handleSubmit}
+      />
+    </S.Form>
   );
 
   // return (
