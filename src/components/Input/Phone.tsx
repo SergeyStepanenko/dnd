@@ -1,7 +1,6 @@
 import React from 'react';
-import { palette } from '@/constants';
-import IconReset from '../Icons/Reset';
 import PhoneInput from 'react-phone-input-2';
+import ResetButton from '../ResetButton';
 import * as S from './Phone.styled';
 
 interface IInputPhoneProps {
@@ -30,11 +29,7 @@ const InputPhone: React.FC<IInputPhoneProps> = (props) => {
           onChange={onChange}
           placeholder="+1 (123) 456-78-90"
         />
-        {value || error ? (
-          <S.Reset onClick={handleReset}>
-            <IconReset {...(error && { fill: palette.red })} />
-          </S.Reset>
-        ) : null}
+        {!!value && <ResetButton onClick={handleReset} isError={!!error} />}
       </S.InputWrapper>
       {!!error && <S.ErrorText mt="9px">{error}</S.ErrorText>}
     </S.Label>

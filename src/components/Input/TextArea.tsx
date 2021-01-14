@@ -1,26 +1,27 @@
 import React from 'react';
-import * as S from './String.styled';
+import TextareaAutosize from 'react-textarea-autosize';
 import ResetButton from '../ResetButton';
+import * as S from './TextArea.styled';
 
-interface IInputStringProps {
+interface IInputTextAreaProps {
   label: string;
   name: string;
   value: string;
   placeholder: string;
   maxLength?: number;
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
   onReset: (name: string) => void;
-  onBlur: (event: React.FocusEvent<HTMLInputElement>) => void;
+  onBlur: (event: React.FocusEvent<HTMLTextAreaElement>) => void;
   error?: string;
 }
 
-const InputString: React.FC<IInputStringProps> = (props) => {
+const InputTextArea: React.FC<IInputTextAreaProps> = (props) => {
   const {
     label,
     name,
     value,
     placeholder,
-    maxLength = 50,
+    maxLength = 255,
     onChange,
     onReset,
     onBlur,
@@ -35,22 +36,18 @@ const InputString: React.FC<IInputStringProps> = (props) => {
     <S.Label>
       <p>{label}</p>
       <S.InputWrapper>
-        <S.Input
-          type="text"
+        <TextareaAutosize
           name={name}
           value={value}
           placeholder={placeholder}
           maxLength={maxLength}
           onChange={onChange}
           onBlur={onBlur}
-          isError={!!error}
-          autoComplete="on"
         />
         {!!value && <ResetButton onClick={handleReset} isError={!!error} />}
       </S.InputWrapper>
-      {!!error && <S.ErrorText mt="9px">{error}</S.ErrorText>}
     </S.Label>
   );
 };
 
-export default InputString;
+export default InputTextArea;

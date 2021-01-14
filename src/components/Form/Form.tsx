@@ -78,6 +78,18 @@ const Form: React.FC = () => {
           onBlur={handleBlur}
         />
       </S.Inner>
+      <S.Inner>
+        <Input.TextArea
+          label="Message"
+          name={EFields.Message}
+          value={formValues[EFields.Message]}
+          placeholder="Type your message (optional)"
+          maxLength={255}
+          onChange={handleChange}
+          onReset={handleReset}
+          onBlur={handleBlur}
+        />
+      </S.Inner>
       <S.Submit
         type="submit"
         as="input"

@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 import { Typography } from '@/styled';
 import { palette } from '@/constants';
 
-export const inputStyles = css<{ isError: boolean }>`
+export const inputStyles = css<{ isError?: boolean }>`
   width: 100%;
   margin-top: 8px;
   display: block;
@@ -72,14 +72,6 @@ export const Label = styled(Typography).attrs(() => ({
 export const InputWrapper = styled.div`
   position: relative;
   display: flex;
-`;
-
-export const Reset = styled.span`
-  position: absolute;
-  right: -9px;
-  font-size: 0;
-  padding: 10px;
-  cursor: pointer;
 `;
 
 export const ErrorText = styled(Typography)`
