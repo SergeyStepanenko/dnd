@@ -13,3 +13,11 @@ export const FORM_VALUES_INITIAL = {
   [EFields.Email]: '',
   [EFields.Message]: '',
 };
+
+export const FORM_ERRORS_INITIAL = {
+  [EFields.FullName]: undefined,
+  [EFields.Subject]: undefined,
+  [EFields.Phone]: undefined,
+  [EFields.Email]: undefined,
+  [EFields.Message]: undefined,
+};

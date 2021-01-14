@@ -11,7 +11,7 @@ interface IInputTextAreaProps {
   maxLength?: number;
   onChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
   onReset: (name: string) => void;
-  onBlur: (event: React.FocusEvent<HTMLTextAreaElement>) => void;
+  onBlur?: (event: React.FocusEvent<HTMLTextAreaElement>) => void;
   error?: string;
 }
 
