@@ -61,8 +61,8 @@ export const inputStyles = css<{ isError?: boolean }>`
         `}
 `;
 
-export const Label = styled(Typography).attrs(() => ({
-  as: 'label',
+export const InputContainer = styled(Typography).attrs(() => ({
+  as: 'div',
   color: 'white',
 }))`
   width: 100%;

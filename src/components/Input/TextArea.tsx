@@ -33,8 +33,8 @@ const InputTextArea: React.FC<IInputTextAreaProps> = (props) => {
   };
 
   return (
-    <S.Label>
-      <p>{label}</p>
+    <S.InputContainer>
+      <label>{label}</label>
       <S.InputWrapper>
         <TextareaAutosize
           name={name}
@@ -46,7 +46,7 @@ const InputTextArea: React.FC<IInputTextAreaProps> = (props) => {
         />
         {!!value && <ResetButton onClick={handleReset} isError={!!error} />}
       </S.InputWrapper>
-    </S.Label>
+    </S.InputContainer>
   );
 };
 

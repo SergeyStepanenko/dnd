@@ -1,8 +1,6 @@
-import { FORM_VALUES_INITIAL, FORM_ERRORS_INITIAL } from './Form.constants';
+import { FORM_VALUES_INITIAL, EFields } from './Form.constants';
 
-export function getFormErrors(
-  formValues: typeof FORM_VALUES_INITIAL,
-): typeof FORM_ERRORS_INITIAL {
+export function getFormErrors(formValues: typeof FORM_VALUES_INITIAL) {
   const { fullName, subject, email, phone, message } = formValues;
 
   return {

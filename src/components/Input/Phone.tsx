@@ -21,8 +21,8 @@ const InputPhone: React.FC<IInputPhoneProps> = (props) => {
   };
 
   return (
-    <S.Label>
-      <p>{label}</p>
+    <S.InputContainer>
+      <label>{label}</label>
       <S.InputWrapper isError={!!error}>
         <PhoneInput
           value={value}
@@ -32,7 +32,7 @@ const InputPhone: React.FC<IInputPhoneProps> = (props) => {
         {!!value && <ResetButton onClick={handleReset} isError={!!error} />}
       </S.InputWrapper>
       {!!error && <S.ErrorText mt="9px">{error}</S.ErrorText>}
-    </S.Label>
+    </S.InputContainer>
   );
 };
 

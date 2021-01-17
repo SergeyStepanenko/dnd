@@ -3,6 +3,7 @@ import Input from '../Input';
 import { EFields } from './Form.constants';
 import useForm from './Form.hooks';
 import * as S from './Form.styled';
+import { palette } from '@/constants';
 
 const Form: React.FC = () => {
   const {
@@ -17,6 +18,7 @@ const Form: React.FC = () => {
 
   return (
     <S.Form>
+      <S.Title variant="h2">Let’s Work Together!</S.Title>
       <S.Inner>
         <Input.String
           label="Full Name"
@@ -67,7 +69,7 @@ const Form: React.FC = () => {
           value={formValues[EFields.Message]}
           error={formErrors[EFields.Message]}
           placeholder="Type your message (optional)"
-          maxLength={255}
+          maxLength={1000}
           onChange={handleTextChange}
           onReset={handleReset}
         />

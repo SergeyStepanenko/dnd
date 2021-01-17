@@ -1,14 +1,34 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { palette } from '@/constants';
+import { Typography } from '@/styled';
+import { mobile, desktop } from '@/styled/mixins';
+import { InputContainer } from '../Input/styled';
 
 export const Form = styled.form`
   background-color: #262c36;
   padding-top: 56px;
   padding-bottom: 41px;
+  font-size: 30px;
 
-  & > * + * {
-    margin-top: 26px;
-  }
+  ${mobile(css`
+    padding-top: 27px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    ${InputContainer} {
+      margin-top: 23px;
+    }
+
+    ${InputContainer}:first-of-type {
+      margin-top: 0;
+    }
+  `)}
+
+  ${desktop(css`
+    & > * + * {
+      margin-top: 26px;
+    }
+  `)}
 `;
 
 export const Inner = styled.div`
@@ -16,13 +36,17 @@ export const Inner = styled.div`
   margin-left: auto;
   margin-right: auto;
 
-  @media only screen and (min-width: 990px) {
+  ${desktop(css`
     display: flex;
 
     & > * + * {
       margin-left: 28px;
     }
-  }
+  `)}
+
+  ${mobile(css`
+    margin-top: 32px;
+  `)}
 `;
 
 export const Submit = styled.input`
@@ -42,9 +66,9 @@ export const Submit = styled.input`
   margin: 24px auto 0;
   display: block;
 
-  @media only screen and (min-width: 990px) {
+  ${desktop(css`
     margin: 32px auto 0;
-  }
+  `)}
 
   &:hover {
     background-color: #009dffe0;
@@ -53,4 +77,14 @@ export const Submit = styled.input`
   &:active {
     background-color: ${palette.blue};
   }
+`;
+
+export const Title = styled(Typography).attrs(() => ({ as: 'h2' }))`
+  color: ${palette.white};
+  text-align: center;
+  font-size: 23px;
+
+  ${desktop(css`
+    font-size: 30px;
+  `)}
 `;

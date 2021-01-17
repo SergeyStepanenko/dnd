@@ -32,8 +32,8 @@ const InputString: React.FC<IInputStringProps> = (props) => {
   };
 
   return (
-    <S.Label>
-      <p>{label}</p>
+    <S.InputContainer>
+      <label>{label}</label>
       <S.InputWrapper>
         <S.Input
           type="text"
@@ -49,7 +49,7 @@ const InputString: React.FC<IInputStringProps> = (props) => {
         {!!value && <ResetButton onClick={handleReset} isError={!!error} />}
       </S.InputWrapper>
       {!!error && <S.ErrorText mt="9px">{error}</S.ErrorText>}
-    </S.Label>
+    </S.InputContainer>
   );
 };
 

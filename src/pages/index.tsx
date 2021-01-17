@@ -15,14 +15,6 @@ const GlobalStyle = createGlobalStyle`
     font-family: Monaco;
     font-weight: 500;
   }
-
-  @media only screen and (max-width: 991px) {
-    body {
-      padding-top: 15px;
-      padding-left: 18px;
-      padding-right: 18px;
-    }
-  }
 `;
 
 const Home: React.FC<PageProps> = () => (
