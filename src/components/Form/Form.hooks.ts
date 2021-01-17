@@ -3,6 +3,7 @@ import {
   EFields,
   FORM_VALUES_INITIAL,
   FORM_ERRORS_INITIAL,
+  FORM_RADIO_VALUES_INITIAL,
 } from './Form.constants';
 import { getFormErrors } from './Form.utils';
 
@@ -42,6 +43,18 @@ export default function useForm() {
       setFormErrors((prevState) => ({
         ...prevState,
         [EFields.Phone]: undefined,
+      }));
+    },
+
+    handleRadioInputChange(values: typeof FORM_RADIO_VALUES_INITIAL) {
+      setFormValues((prevState) => ({
+        ...prevState,
+        [EFields.TypeOfWork]: values,
+      }));
+
+      setFormErrors((prevState) => ({
+        ...prevState,
+        [EFields.TypeOfWork]: undefined,
       }));
     },
 

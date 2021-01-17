@@ -3,19 +3,21 @@ import * as S from './String.styled';
 import ResetButton from '../ResetButton';
 
 interface IInputStringProps {
-  label: string;
+  className?: string;
+  label?: string;
   name: string;
   value: string;
   placeholder: string;
   maxLength?: number;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onReset: (name: string) => void;
-  onBlur: (event: React.FocusEvent<HTMLInputElement>) => void;
+  onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void;
   error?: string;
 }
 
 const InputString: React.FC<IInputStringProps> = (props) => {
   const {
+    className,
     label,
     name,
     value,
@@ -32,8 +34,8 @@ const InputString: React.FC<IInputStringProps> = (props) => {
   };
 
   return (
-    <S.InputContainer>
-      <label>{label}</label>
+    <S.InputContainer className={className}>
+      {!!label && <label>{label}</label>}
       <S.InputWrapper>
         <S.Input
           type="text"

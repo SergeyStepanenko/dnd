@@ -1,7 +1,10 @@
-import { FORM_VALUES_INITIAL, EFields } from './Form.constants';
+import {
+  FORM_VALUES_INITIAL,
+  FORM_RADIO_VALUES_INITIAL,
+} from './Form.constants';
 
 export function getFormErrors(formValues: typeof FORM_VALUES_INITIAL) {
-  const { fullName, subject, email, phone, message } = formValues;
+  const { fullName, subject, email, phone, message, type_of_work } = formValues;
 
   return {
     fullName: getFullNameError(fullName),
@@ -9,23 +12,30 @@ export function getFormErrors(formValues: typeof FORM_VALUES_INITIAL) {
     email: getEmailError(email),
     phone: getPhoneError(phone),
     message,
+    type_of_work: getTypeOfWorkError(type_of_work),
   };
 }
 
-export function getFullNameError(fullName: string | undefined) {
+function getFullNameError(fullName: string | undefined) {
   return fullName ? undefined : 'Please provide your name';
 }
 
-export function getSubjectError(subject: string | undefined) {
+function getSubjectError(subject: string | undefined) {
   return subject ? undefined : 'Subject is a required field';
 }
 
-export function getPhoneError(phone: string | undefined) {
+function getPhoneError(phone: string | undefined) {
   return phone ? undefined : 'Phone is a required field';
 }
 
-export function getEmailError(email: string | undefined) {
+function getEmailError(email: string | undefined) {
   return /\S+@\S+\.\S+/.test(email)
     ? undefined
     : 'Please enter a valid email address';
+}
+
+function getTypeOfWorkError(typeOfWork: typeof FORM_RADIO_VALUES_INITIAL) {
+  return Object.values(typeOfWork).filter(Boolean).length > 0
+    ? undefined
+    : 'Please select at least one type';
 }

@@ -11,6 +11,7 @@ const Form: React.FC = () => {
     formErrors,
     handleTextChange,
     handlePhoneChange,
+    handleRadioInputChange,
     handleBlur,
     handleReset,
     handleSubmit,
@@ -72,6 +73,14 @@ const Form: React.FC = () => {
           maxLength={1000}
           onChange={handleTextChange}
           onReset={handleReset}
+        />
+      </S.Inner>
+      <S.Inner>
+        <Input.Radio
+          label="Type of Work You Need"
+          values={formValues[EFields.TypeOfWork]}
+          error={formErrors[EFields.TypeOfWork]}
+          onChange={handleRadioInputChange}
         />
       </S.Inner>
       <S.Submit
