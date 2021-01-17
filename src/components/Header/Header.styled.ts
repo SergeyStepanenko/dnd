@@ -1,12 +1,17 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Typography } from '@/styled';
+import { mobile, desktop } from '@/styled/mixins';
+import IconInstagramComponent from '../Icons/Instagram';
+import IconBurgerComponent from '../Icons/Burger';
 
 export const Title = styled(Typography)`
-  line-height: 1.7;
+  ${mobile(css`
+    font-size: 23px;
+  `)}
 
-  @media only screen and (min-width: 991px) {
-    line-height: 1.2;
-  }
+  ${desktop(css`
+    font-size: 40px;
+  `)}
 `;
 
 export const Description = styled(Typography)`
@@ -19,14 +24,43 @@ export const Description = styled(Typography)`
   }
 `;
 
+export const Link = styled.a`
+  ${mobile(css`
+    display: none;
+  `)}
+`;
+
+export const IconInstagram = styled(IconInstagramComponent)``;
+
+export const IconBurger = styled(IconBurgerComponent)`
+  cursor: pointer;
+`;
+
 export const Header = styled.header`
-  @media only screen and (max-width: 990px) {
-    padding-left: 18px;
-    padding-right: 18px;
+  max-width: 1366px;
+
+  ${Link} {
+    margin-right: auto;
   }
 
-  @media only screen and (min-width: 991px) {
-    padding-top: 51px;
-    text-align: center;
+  ${IconBurger} {
+    margin-left: auto;
   }
+
+  ${mobile(css`
+    padding: 15px 18px 0;
+  `)}
+
+  ${desktop(css`
+    padding: 51px 40px 0;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  `)}
+`;
+
+export const HeaderInner = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;

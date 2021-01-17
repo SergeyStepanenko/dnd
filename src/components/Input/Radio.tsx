@@ -13,6 +13,14 @@ interface IRadioProps {
   error?: string;
 }
 
+const CHECKBOXES_LIST = [
+  ERadioFields.WebDesign,
+  ERadioFields.WebDevelopment,
+  ERadioFields['UI/UX'],
+  ERadioFields.Logo,
+  ERadioFields.Other,
+];
+
 const Radio: React.FC<IRadioProps> = (props) => {
   const { label, values, onChange, error } = props;
 
@@ -41,19 +49,11 @@ const Radio: React.FC<IRadioProps> = (props) => {
 
   const otherValue = values[ERadioFields.OtherValue];
 
-  const checkboxesList = [
-    ERadioFields.WebDesign,
-    ERadioFields.WebDevelopment,
-    ERadioFields['UI/UX'],
-    ERadioFields.Logo,
-    ERadioFields.Other,
-  ];
-
   return (
     <S.InputContainer>
       <label>{label}</label>
       <S.CheckboxesContainer>
-        {checkboxesList.map((name) => (
+        {CHECKBOXES_LIST.map((name) => (
           <Checkbox
             key={name}
             name={name}

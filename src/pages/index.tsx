@@ -7,6 +7,7 @@ import '@/css/fonts.css';
 import theme from '@/styled/theme';
 import Header from '@/components/Header';
 import Form from '@/components/Form';
+import Content from '@/components/Content';
 
 const GlobalStyle = createGlobalStyle`
   ${reset};
@@ -23,6 +24,7 @@ const Home: React.FC<PageProps> = () => (
     <ThemeProvider theme={theme}>
       <Header />
       <main>
+        <Content />
         <Form />
       </main>
     </ThemeProvider>
