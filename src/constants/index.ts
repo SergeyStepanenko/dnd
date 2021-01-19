@@ -5,3 +5,5 @@ export const palette = {
   red: '#f5634b',
   blue: '#009dff',
 };
+
+export const FontFamilyAileron = 'font-family: Aileron-Bold';

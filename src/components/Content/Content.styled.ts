@@ -8,5 +8,6 @@ export const Wrapper = styled.div`
 
   ${desktop(css`
     margin-top: 51px;
+    margin-bottom: 71px;
   `)}
 `;
