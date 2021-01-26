@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { desktop, mobile } from '@/styled/mixins';
 import { FontFamilyAileron } from '@/constants';
-import { EImageSlug } from './Slider.constants';
+import { EImageSlug } from '@/constants/sliderItems';
 
 export const Title = styled.p`
   ${FontFamilyAileron};

@@ -20,3 +20,11 @@ export const Main = styled.main`
     padding-top: 53px;
   `)}
 `;
+
+export const Inner = styled.div<{ isBlur: boolean }>`
+  ${({ isBlur }) =>
+    isBlur &&
+    css`
+      filter: blur(18px);
+    `}
+`;

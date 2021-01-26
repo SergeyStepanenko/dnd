@@ -1,7 +1,7 @@
 import React from 'react';
 import { Slider as ScrollSnapSlider } from '@lifarl/react-scroll-snap-slider';
+import { ITEMS } from '@/constants/sliderItems';
 import * as S from './Slider.styled';
-import { ITEMS } from './Slider.constants';
 import SliderItem from './SliderItem';
 
 const MOBILE_BREAKPOINT = 991;

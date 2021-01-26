@@ -1,7 +1,7 @@
 import React from 'react';
 import * as S from './Header.styled';
 
-const Header: React.FC = () => {
+const Header: React.FC<{ onMenuClick: () => void }> = ({ onMenuClick }) => {
   return (
     <S.Header>
       <S.HeaderInner>
@@ -11,7 +11,7 @@ const Header: React.FC = () => {
         <S.Title variant="h1" as="h1" color="black">
           Design and Development
         </S.Title>
-        <S.IconBurger />
+        <S.IconBurger onClick={onMenuClick} />
       </S.HeaderInner>
     </S.Header>
   );

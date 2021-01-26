@@ -1,6 +1,6 @@
 import React from 'react';
-import { IItems } from './Slider.constants';
 import * as S from './SliderItem.styled';
+import { IItems } from '@/constants/sliderItems';
 
 const SliderItem: React.FC<IItems> = ({
   slug,
