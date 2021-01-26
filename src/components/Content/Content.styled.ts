@@ -3,7 +3,7 @@ import { mobile, desktop } from '@/styled/mixins';
 
 export const Wrapper = styled.div`
   ${mobile(css`
-    margin-top: 38px;
+    margin-top: 19px;
   `)}
 
   ${desktop(css`

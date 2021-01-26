@@ -1,20 +1,18 @@
-import styled, { css } from 'styled-components';
-import { desktop } from '@/styled/mixins';
+import styled from 'styled-components';
 
-export const Wrapper = styled.div`
-  display: flex;
-  overflow-x: scroll;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
-
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
-  scrollbar-width: none; /* Firefox */
-
-  ${desktop(css`
-    & > * + * {
-      margin-left: 30px;
+export const SliderWrapper = styled.div`
+  [direction='prev'],
+  [direction='next'] {
+    svg {
+      vertical-align: middle;
     }
-  `)}
+  }
+`;
+
+export const ItemsWrapper = styled.div`
+  padding: 0 18px;
+
+  & > * + * {
+    margin-top: 19px;
+  }
 `;

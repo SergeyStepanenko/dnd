@@ -29,6 +29,10 @@ export const Form = styled.form`
       margin-top: 26px;
     }
   `)}
+
+  ${mobile(css`
+    margin-top: 53px;
+  `)}
 `;
 
 export const Inner = styled.div`

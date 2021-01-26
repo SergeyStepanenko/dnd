@@ -32,26 +32,38 @@ export const Description = styled.p`
 `;
 
 export const Image = styled.img<{ slug: EImageSlug }>`
-  ${desktop(css`
-    ${({ slug }: { slug: EImageSlug }) => {
-      switch (slug) {
-        case EImageSlug.Logos:
-          return css`
+  ${({ slug }: { slug: EImageSlug }) => {
+    switch (slug) {
+      case EImageSlug.Logos:
+        return css`
+          ${desktop(css`
             width: 202px;
             height: 172px;
-          `;
+          `)};
 
-        case EImageSlug.Nature:
-          return css`
+          ${mobile(css`
+            width: 129px;
+            height: 110px;
+            margin: 76px 30%;
+          `)}
+        `;
+
+      case EImageSlug.Nature:
+        return css`
+          ${desktop(css`
             width: 420px;
             height: auto;
-          `;
+          `)};
 
-        default:
-          break;
-      }
-    }}
-  `)}
+          ${mobile(css`
+            width: 100%;
+          `)}
+        `;
+
+      default:
+        break;
+    }
+  }}
 `;
 
 export const Wrapper = styled.figure`
@@ -74,6 +86,18 @@ export const Inner = styled.div`
     width: 527px;
     height: 419px;
   `)}
+
+  ${mobile(css`
+    width: 100%;
+  `)}
 `;
 
-export const Info = styled.figcaption``;
+export const Info = styled.figcaption`
+  ${mobile(css`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 8px;
+  `)}
+`;

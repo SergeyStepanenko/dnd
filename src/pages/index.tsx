@@ -9,6 +9,8 @@ import Header from '@/components/Header';
 import Form from '@/components/Form';
 import Content from '@/components/Content';
 
+import * as S from './Index.styled';
+
 const GlobalStyle = createGlobalStyle`
   ${reset};
  
@@ -23,10 +25,13 @@ const Home: React.FC<PageProps> = () => (
     <GlobalStyle />
     <ThemeProvider theme={theme}>
       <Header />
-      <main>
+      <S.Main>
+        <S.Description as="h2" color="grey">
+          Hi! We’re a small team that is focused on your success!
+        </S.Description>
         <Content />
         <Form />
-      </main>
+      </S.Main>
     </ThemeProvider>
   </>
 );

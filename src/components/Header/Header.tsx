@@ -13,9 +13,6 @@ const Header: React.FC = () => {
         </S.Title>
         <S.IconBurger />
       </S.HeaderInner>
-      <S.Description as="h2" color="grey">
-        Hi! We’re a small team that is focused on your success!
-      </S.Description>
     </S.Header>
   );
 };

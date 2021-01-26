@@ -14,16 +14,6 @@ export const Title = styled(Typography)`
   `)}
 `;
 
-export const Description = styled(Typography)`
-  margin-top: 23px;
-  font-size: 13px;
-
-  @media only screen and (min-width: 991px) {
-    margin-top: 9px;
-    font-size: 17px;
-  }
-`;
-
 export const Link = styled.a`
   ${mobile(css`
     display: none;
@@ -48,7 +38,10 @@ export const Header = styled.header`
   }
 
   ${mobile(css`
-    padding: 15px 18px 0;
+    padding: 15px 18px;
+    position: fixed;
+    background-color: #fff;
+    width: 100%;
   `)}
 
   ${desktop(css`
