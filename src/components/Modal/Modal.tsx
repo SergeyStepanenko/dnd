@@ -6,9 +6,14 @@ import IconClose from '../Icons/Close';
 const Modal: React.FC<{ onCloseClick: () => void }> = ({ onCloseClick }) => {
   return (
     <>
-      <S.Inner>
+      <S.Inner onClick={onCloseClick}>
         {ITEMS.map(({ title, imageSmall }, index) => (
-          <S.Item key={index}>
+          <S.Item
+            key={index}
+            onClick={(event: React.MouseEvent<HTMLDivElement>) => {
+              event.stopPropagation();
+            }}
+          >
             <S.Image src={imageSmall} alt={title} />
             <S.Title>{title}</S.Title>
           </S.Item>

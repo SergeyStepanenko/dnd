@@ -7,9 +7,7 @@ import SliderItem from './SliderItem';
 const MOBILE_BREAKPOINT = 991;
 
 const Slider: React.FC = () => {
-  const [isMobile, setIsMobile] = React.useState(
-    window.innerWidth < MOBILE_BREAKPOINT,
-  );
+  const [isMobile, setIsMobile] = React.useState(false);
 
   React.useEffect(() => {
     const handleResize = () => {

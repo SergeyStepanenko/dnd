@@ -26,5 +26,6 @@ export const Inner = styled.div<{ isBlur: boolean }>`
     isBlur &&
     css`
       filter: blur(18px);
+      transition: 0.1s filter linear;
     `}
 `;

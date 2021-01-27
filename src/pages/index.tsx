@@ -10,7 +10,7 @@ import Form from '@/components/Form';
 import Content from '@/components/Content';
 import Modal from '@/components/Modal';
 
-import * as S from './Index.styled';
+import * as S from '../styled/Index.styled';
 
 const GlobalStyle = createGlobalStyle<{ isModalOpen: boolean }>`
   ${reset};

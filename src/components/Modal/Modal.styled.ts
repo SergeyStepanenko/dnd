@@ -43,8 +43,8 @@ export const Title = styled(Typography)`
 export const IconWrapper = styled.div`
   padding: 10px;
   position: fixed;
-  top: 50px;
-  right: 50px;
+  top: 30px;
+  right: 30px;
   font-size: 0;
   cursor: pointer;
 
