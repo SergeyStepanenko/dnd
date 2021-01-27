@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[3],{"+m2t":function(e,n,t){},QeBL:function(e,n,t){"use strict";t.r(n);var l=t("q1tI"),r=t.n(l),a=(t("+m2t"),function(){return r.a.createElement("h1",null,"Hello TypeScript!")});n.default=function(){return r.a.createElement("main",null,r.a.createElement(a,null),r.a.createElement("p",null,"Hi there world"))}}}]);
+//# sourceMappingURL=component---src-pages-index-tsx-1e3a5408cf02f79a6fa1.js.map
