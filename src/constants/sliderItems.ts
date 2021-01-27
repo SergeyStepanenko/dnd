@@ -1,11 +1,7 @@
 // @ts-ignore
 import Nature from '@/images/nature.png';
 // @ts-ignore
-import Exgeo1x from '@/images/exgeo-1x.png';
-// @ts-ignore
-import Exgeo2x from '@/images/exgeo-2x.png';
-// @ts-ignore
-import Exgeo3x from '@/images/exgeo-3x.png';
+import ExgeoSVG from '@/images/exgeo.svg';
 
 export enum EImageSlug {
   Nature,
@@ -34,9 +30,9 @@ export const ITEMS: IItems[] = [
     slug: EImageSlug.Logos,
     title: 'Logos',
     description: 'Graphic Design',
-    imageSmall: Exgeo1x,
-    imageMedium: Exgeo2x,
-    imageLarge: Exgeo3x,
+    imageSmall: ExgeoSVG,
+    imageMedium: ExgeoSVG,
+    imageLarge: ExgeoSVG,
   },
   {
     slug: EImageSlug.Nature,
@@ -50,8 +46,8 @@ export const ITEMS: IItems[] = [
     slug: EImageSlug.Logos,
     title: 'Logos',
     description: 'Graphic Design',
-    imageSmall: Exgeo1x,
-    imageMedium: Exgeo2x,
-    imageLarge: Exgeo3x,
+    imageSmall: ExgeoSVG,
+    imageMedium: ExgeoSVG,
+    imageLarge: ExgeoSVG,
   },
 ];

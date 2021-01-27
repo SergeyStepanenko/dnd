@@ -1,5 +1,6 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Typography } from '@/styled';
+import { mobile } from '@/styled/mixins';
 
 export const Inner = styled.div`
   position: fixed;
@@ -13,6 +14,10 @@ export const Inner = styled.div`
   & > * + * {
     margin-top: 30px;
   }
+
+  ${mobile(css`
+    padding-top: 60px;
+  `)}
 `;
 
 export const Item = styled.div`
@@ -52,4 +57,9 @@ export const IconWrapper = styled.div`
     width: 22px;
     height: 22px;
   }
+
+  ${mobile(css`
+    top: 20px;
+    right: 20px;
+  `)}
 `;
