@@ -2,6 +2,7 @@ import React from 'react';
 import { PageProps } from 'gatsby';
 import { ThemeProvider, createGlobalStyle, css } from 'styled-components';
 import reset from 'styled-reset-advanced';
+import { Helmet } from 'react-helmet';
 
 import '@/css/fonts.css';
 import theme from '@/styled/theme';
@@ -33,6 +34,10 @@ const Home: React.FC<PageProps> = () => {
 
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Design and Development</title>
+      </Helmet>
       <GlobalStyle isModalOpen={isModalOpen} />
       <ThemeProvider theme={theme}>
         <S.Inner isBlur={isModalOpen}>
