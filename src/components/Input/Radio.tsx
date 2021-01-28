@@ -36,7 +36,7 @@ const Radio: React.FC<IRadioProps> = (props) => {
   const handleInputStringReset = () => {
     onChange({
       ...values,
-      [ERadioFields.OtherValue]: undefined,
+      [ERadioFields.OtherValue]: '',
     });
   };
 
