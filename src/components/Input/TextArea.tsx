@@ -34,7 +34,7 @@ const InputTextArea: React.FC<IInputTextAreaProps> = (props) => {
 
   return (
     <S.InputContainer>
-      <label>{label}</label>
+      <label htmlFor={name}>{label}</label>
       <S.InputWrapper>
         <TextareaAutosize
           name={name}

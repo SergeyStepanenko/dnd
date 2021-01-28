@@ -22,7 +22,7 @@ const InputPhone: React.FC<IInputPhoneProps> = (props) => {
 
   return (
     <S.InputContainer>
-      <label>{label}</label>
+      <label htmlFor={name}>{label}</label>
       <S.InputWrapper isError={!!error}>
         <PhoneInput
           value={value}

@@ -35,7 +35,7 @@ const InputString: React.FC<IInputStringProps> = (props) => {
 
   return (
     <S.InputContainer className={className}>
-      {!!label && <label>{label}</label>}
+      {!!label && <label htmlFor={name}>{label}</label>}
       <S.InputWrapper>
         <S.Input
           type="text"
