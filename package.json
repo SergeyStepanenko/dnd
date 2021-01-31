@@ -1,13 +1,12 @@
 {
-  "name": "gatsby-starter-ts",
-  "description": "A TypeScript starter for Gatsby that includes all you need to build amazing projects",
+  "name": "dnd",
+  "description": "Landing page for design and development",
   "version": "1.0.0",
   "private": true,
-  "author": "João Pedro Schmitz <oi@joaopedro.cc> (joaopedro.cc)",
+  "author": "Sergey Stepanenko",
   "license": "MIT",
   "keywords": [
     "gatsby",
-    "starter",
     "typescript"
   ],
   "scripts": {
