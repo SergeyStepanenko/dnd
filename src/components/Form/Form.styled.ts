@@ -53,14 +53,13 @@ export const Inner = styled.div`
   `)}
 `;
 
-export const Submit = styled.input`
+export const Submit = styled.input<{ isSubmitting: boolean }>`
   width: 336px;
-  height: 59px;
   padding: 19px;
   border-radius: 5px;
   background-color: ${palette.blue};
   font-family: Aileron;
-  font-size: 18px;
+  font-size: 20px;
   color: ${palette.white};
   text-align: center;
   cursor: pointer;
@@ -69,6 +68,7 @@ export const Submit = styled.input`
   outline: none;
   margin: 24px auto 0;
   display: block;
+  transition: all 0.2s;
 
   ${desktop(css`
     margin: 32px auto 0;
@@ -81,6 +81,22 @@ export const Submit = styled.input`
   &:active {
     background-color: ${palette.blue};
   }
+
+  ${({ isSubmitting }) =>
+    isSubmitting &&
+    css`
+      cursor: default;
+      background-color: ${palette.grey};
+      color: ${palette.white};
+
+      &:hover {
+        background-color: ${palette.grey};
+      }
+
+      &:active {
+        background-color: ${palette.grey};
+      }
+    `}
 `;
 
 export const Title = styled(Typography).attrs(() => ({ as: 'h2' }))`

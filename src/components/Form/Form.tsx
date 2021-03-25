@@ -15,6 +15,7 @@ const Form: React.FC = () => {
     handleBlur,
     handleReset,
     handleSubmit,
+    isSubmitting,
   } = useForm();
 
   return (
@@ -88,6 +89,7 @@ const Form: React.FC = () => {
         as="input"
         value="Start a Project"
         onClick={handleSubmit}
+        isSubmitting={isSubmitting}
       />
     </S.Form>
   );

@@ -74,6 +74,10 @@ export default function useForm() {
     async handleSubmit(event: React.FormEvent) {
       event.preventDefault();
 
+      if (isSubmitting) {
+        return;
+      }
+
       const formErrors = getFormErrors(formValues);
       setFormErrors(formErrors);
 
@@ -86,12 +90,12 @@ export default function useForm() {
       const typeOfWorkMessage = getTypeOfWorkMessage(formValues);
 
       setIsSubmitting(true);
-      await emailjs.send(
+      const response = await emailjs.send(
         'service_z6mwlti',
         'template_rmkqs5o',
         {
-          from_name: formValues[EFields.FullName],
           full_name: formValues[EFields.FullName],
+          email: formValues[EFields.Email],
           phone: formValues[EFields.Phone],
           message: formValues[EFields.Message],
           type_of_work: typeOfWorkMessage,
@@ -99,6 +103,12 @@ export default function useForm() {
         'user_02i6rPO39lItFRdtgyHYK',
       );
       setIsSubmitting(false);
+
+      if (response.status === 200) {
+        // TODO Show notice
+      } else {
+        // TODO Show error
+      }
     },
 
     isSubmitting,
