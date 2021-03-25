@@ -1,11 +1,13 @@
 import React from 'react';
+import emailjs from 'emailjs-com';
 import {
   EFields,
+  ERadioFields,
   FORM_VALUES_INITIAL,
   FORM_ERRORS_INITIAL,
   FORM_RADIO_VALUES_INITIAL,
 } from './Form.constants';
-import { getFormErrors } from './Form.utils';
+import { getFormErrors, getTypeOfWorkMessage } from './Form.utils';
 
 export default function useForm() {
   const [formValues, setFormValues] = React.useState<
@@ -15,6 +17,8 @@ export default function useForm() {
   const [formErrors, setFormErrors] = React.useState<
     typeof FORM_ERRORS_INITIAL
   >(FORM_ERRORS_INITIAL);
+
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
 
   return {
     formValues,
@@ -67,12 +71,36 @@ export default function useForm() {
 
     handleBlur(event: React.FocusEvent<HTMLInputElement>) {},
 
-    handleSubmit(event: React.FormEvent) {
-      const formErrors = getFormErrors(formValues);
+    async handleSubmit(event: React.FormEvent) {
+      event.preventDefault();
 
+      const formErrors = getFormErrors(formValues);
       setFormErrors(formErrors);
 
-      event.preventDefault();
+      const isError = Object.values(formErrors).filter(Boolean).length > 0;
+
+      if (isError) {
+        return;
+      }
+
+      const typeOfWorkMessage = getTypeOfWorkMessage(formValues);
+
+      setIsSubmitting(true);
+      await emailjs.send(
+        'service_z6mwlti',
+        'template_rmkqs5o',
+        {
+          from_name: formValues[EFields.FullName],
+          full_name: formValues[EFields.FullName],
+          phone: formValues[EFields.Phone],
+          message: formValues[EFields.Message],
+          type_of_work: typeOfWorkMessage,
+        },
+        'user_02i6rPO39lItFRdtgyHYK',
+      );
+      setIsSubmitting(false);
     },
+
+    isSubmitting,
   };
 }

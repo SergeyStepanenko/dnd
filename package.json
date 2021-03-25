@@ -36,6 +36,7 @@
     "@lifarl/react-scroll-snap-slider": "^2.0.0",
     "@types/styled-components": "^5.1.7",
     "babel-plugin-styled-components": "^1.12.0",
+    "emailjs-com": "^2.6.4",
     "gatsby": "2.30.1",
     "gatsby-plugin-react-helmet": "^3.9.0",
     "gatsby-plugin-styled-components": "^3.8.0",

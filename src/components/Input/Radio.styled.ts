@@ -13,6 +13,7 @@ export const Checkbox = styled.div.attrs(() => ({
 }))`
   display: flex;
   align-items: center;
+  cursor: pointer;
 
   svg {
     margin-right: 10px;

@@ -4,7 +4,7 @@ export enum EFields {
   Phone = 'phone',
   Email = 'email',
   Message = 'message',
-  TypeOfWork = 'type_of_work',
+  TypeOfWork = 'typeOfWork',
 }
 
 export enum ERadioFields {
